@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mood_tracker/Auth/register_page.dart';
 import 'package:mood_tracker/Components/add_event_textfield.dart';
@@ -179,13 +180,8 @@ class _HomepageState extends State<Homepage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => RegisterPage(),
-                            ),
-                          );
+                        onTap: () async {
+                          await FirebaseAuth.instance.signOut();
                         },
                         child: Container(
                           decoration: BoxDecoration(
