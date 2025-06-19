@@ -13,7 +13,6 @@ A simple Flutter-based Mood Tracker application built for the Codexcelerate IT C
 - 🗑 Delete a mood entry
 - ☁ Real-time Firestore database sync
 - 🔒 Firebase Security Rules (per-user access)
-- ✅ Single mood per user per day logic
 - 📦 Clean code with Provider state management
 
 ---
