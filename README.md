@@ -56,7 +56,7 @@ A simple Flutter-based Mood Tracker application built for the Codexcelerate IT C
 ## 🧠 Project Logic
 
 - *Authentication*: Firebase Auth is used to register/login users.
-- *Mood Entry*: Each user can select one emoji and add a mood note per day.
+- *Mood Entry*: Each user can select one emoji and add a mood note.
 - *Firestore Storage*: Data is stored in:
   
   users/{uid}/moods/{auto-id}
