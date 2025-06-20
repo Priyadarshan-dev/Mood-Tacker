@@ -73,21 +73,30 @@ A simple Flutter-based Mood Tracker application built for the Codexcelerate IT C
 ## 🗂 Folder Structure
 
 lib/
-├── main.dart
-├── Models/
-│   └── mood_model.dart
-├── Provider/
-│   └── mood_events.dart
 ├── Auth/
-│   ├── login_page.dart
-│   ├── register_page.dart
-│   └── auth.dart
-├── Screens/
-│   ├── homepage.dart
-│   └── mood_history.dart
+│   ├── auth.dart                  # Handles auth state and routes user accordingly
+│   ├── login_page.dart            # Login UI and logic
+│   └── register_page.dart         # Registration UI and logic
+│
 ├── Components/
-│   └── add_event_textfield.dart
-
+│   ├── add_event_textfield.dart   # Reusable widget for adding notes
+│   ├── loginpage_textfield.dart   # Reusable textfield for login
+│   ├── register_textfield.dart    # Reusable textfield for register
+│   └── tab_bar.dart               # Tab bar UI with Home, History, Settings
+│
+├── Models/
+│   └── mood_model.dart            # Mood model with toMap/fromMap methods
+│
+├── Provider/
+│   └── mood_events.dart           # Provider for managing mood data and saving to Firestore
+│
+├── Screens/
+│   ├── homepage.dart              # Main mood entry screen
+│   ├── mood_history.dart          # Displays list of saved moods from Firestore
+│   ├── settings_page.dart         # Logout and future settings
+│   └── firebase_options.dart      # Firebase config file (auto-generated)
+│
+├── main.dart                      # App entry point
 
 ---
 
