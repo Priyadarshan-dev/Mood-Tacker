@@ -1,11 +1,7 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:mood_tracker/Auth/register_page.dart';
 import 'package:mood_tracker/Components/add_event_textfield.dart';
 import 'package:mood_tracker/Provider/mood_events.dart';
-import 'package:mood_tracker/Screens/mood_history.dart';
 import 'package:provider/provider.dart';
-
 import '../Models/mood_model.dart';
 
 class Homepage extends StatefulWidget {
@@ -25,18 +21,6 @@ class _HomepageState extends State<Homepage> {
       builder:
           (context, event, child) => Scaffold(
             backgroundColor: Colors.grey.shade300,
-            appBar: AppBar(
-              backgroundColor: Colors.grey.shade900,
-              title: Text(
-                "M o o d T r a c k e r",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              centerTitle: true,
-            ),
-
             body: SingleChildScrollView(
               padding: EdgeInsets.only(
                 bottom: MediaQuery.of(context).viewInsets.bottom,
@@ -105,39 +89,8 @@ class _HomepageState extends State<Homepage> {
                   ),
                   SizedBox(height: 20),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => MoodHistory(),
-                            ),
-                          );
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 20),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Colors.grey.shade900,
-                            ),
-                            height: 50,
-                            width: 150,
-                            child: Center(
-                              child: Text(
-                                "Mood Diary",
-                                style: TextStyle(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
                       GestureDetector(
                         onTap: () {
                           final moodNote = controller.text.trim();
@@ -150,6 +103,11 @@ class _HomepageState extends State<Homepage> {
                             event.addMood(moodObj);
                             controller.clear();
                           }
+                          setState(() {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(content: Text("Added To Mood History")),
+                            );
+                          });
                         },
                         child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -176,34 +134,6 @@ class _HomepageState extends State<Homepage> {
                     ],
                   ),
                   SizedBox(height: 290),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      GestureDetector(
-                        onTap: () async {
-                          await FirebaseAuth.instance.signOut();
-                        },
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Colors.grey.shade900,
-                          ),
-                          height: 50,
-                          width: 150,
-                          child: Center(
-                            child: Text(
-                              "Logout",
-                              style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
                 ],
               ),
             ),

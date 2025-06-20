@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mood_tracker/Auth/register_page.dart';
 import 'package:mood_tracker/Components/loginpage_textfield.dart';
+import 'package:mood_tracker/Components/tab_bar.dart';
 import 'package:mood_tracker/Screens/homepage.dart';
 
 class LoginPage extends StatefulWidget {
@@ -71,7 +72,7 @@ class _LoginPageState extends State<LoginPage> {
                 );
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Homepage()),
+                  MaterialPageRoute(builder: (context) => MyTabBar()),
                 );
               } catch (e) {
                 ScaffoldMessenger.of(context).showSnackBar(

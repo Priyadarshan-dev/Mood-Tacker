@@ -16,11 +16,6 @@ class MoodHistory extends StatelessWidget {
         .orderBy("timestamp", descending: true);
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Mood Diary", style: TextStyle(color: Colors.white)),
-        centerTitle: true,
-        backgroundColor: Colors.grey.shade900,
-      ),
       backgroundColor: Colors.grey.shade300,
       body: StreamBuilder<QuerySnapshot>(
         stream: moodsRef.snapshots(),
