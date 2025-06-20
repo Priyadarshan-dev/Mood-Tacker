@@ -65,9 +65,11 @@ A simple Flutter-based Mood Tracker application built for the Codexcelerate IT C
 - *State Management*: Provider is used to manage mood entries in real-time.
 
 ---
+
 📹 Demo Video
 
-▶ Click here to watch the demo : https://drive.google.com/file/d/1wsbiQ2YXcfq_BAeItUQ4GaePt2UUf2Ap/view?usp=drivesdk
+▶ Click here to watch the demo : https://drive.google.com/file/d/1x-dmQ4PaFE6Y6IRNBdtunptspZp3roSG/view?usp=drivesdk 
+
 ---
 
 ## 🗂 Folder Structure
